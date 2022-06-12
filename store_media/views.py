@@ -1,6 +1,4 @@
 import os
-import mimetypes, magic
-from django.core.files.storage import default_storage
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import viewsets, mixins, status
@@ -14,7 +12,6 @@ class MediaStoreViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
 
     def create(self, request):
         data = request.data
-        
         folder = request.path.replace("/", "_")
         try:
             os.mkdir(settings.MEDIA_ROOT, folder)
