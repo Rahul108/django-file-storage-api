@@ -25,7 +25,7 @@ SECRET_KEY = env.str("DJANGO_SECRET_KEY")
 BASE_URL = env.str("BASE_URL")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
 
